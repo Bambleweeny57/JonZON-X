@@ -226,7 +226,20 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_to_pin|698500|317500|ffb1149f-c668-43d4-b1f4-5364c7fcb132|8c40a563-3d92-4462-b8ac-5fe6f34897c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        "This is Ok as the pin can be used to power the ZX81 as well as the ZX81 powering the expansion."
+      ],
+      [
+        "pin_to_pin|698500|393700|b20a9bf4-a1c3-4fb2-a9a9-47556ceb796f|9865b105-86e4-44ed-8dfc-86e8996ad59c|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        "This is Ok as the pin can be used to power the ZX81 as well as the ZX81 powering the expansion."
+      ],
+      [
+        "pin_to_pin|698500|419100|5d5e4f5a-17af-444f-9b77-81e2d662fe86|9865b105-86e4-44ed-8dfc-86e8996ad59c|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        "This is Ok as the pin can be used to power the ZX81 as well as the ZX81 powering the expansion."
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -499,6 +512,18 @@
       {
         "netclass": "Default",
         "pattern": "/CLK"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "BDIR"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/BDIR"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GND"
       }
     ]
   },
