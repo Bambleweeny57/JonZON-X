@@ -3190,27 +3190,42 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Audio:AudioJack2_Ground"
+		(symbol "AudioJack:SJ1-3523N"
+			(pin_names
+				(offset 1.016)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "J"
-				(at 0 8.89 0)
+				(at -7.62 8.382 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "AudioJack2_Ground"
-				(at 0 6.35 0)
+			(property "Value" "SJ1-3523N"
+				(at -7.62 -10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "SJ1-3523N:CUI_SJ1-3523N"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -3219,7 +3234,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -3228,60 +3243,130 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Audio Jack, 2 Poles (Mono / TS), Grounded Sleeve"
+			(property "MF" "Same Sky"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "audio jack receptacle mono phone headphone TS connector"
+			(property "MAXIMUM_PACKAGE_HEIGHT" "6.25 mm"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Jack*"
+			(property "Package" "None"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(symbol "AudioJack2_Ground_0_1"
+			(property "Price" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/SJ1-3523N/Same+Sky/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "1.05"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/SJ1-3523N/Same+Sky/view-part/?ref=snap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "SJ1-3523N"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "3.5 mm, Stereo, Right Angle, Through Hole, 3 Conductors, 0 Internal Switches, Audio Jack Connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "CUI Devices"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "SJ1-3523N_0_0"
 				(rectangle
-					(start -2.54 -2.54)
-					(end -3.81 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.635 -0.635) (xy 1.27 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 2.54 3.81)
-					(end -2.54 -2.54)
+					(start -7.62 -7.62)
+					(end 7.62 7.62)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3292,68 +3377,210 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 2.54) (xy -0.635 2.54) (xy -0.635 0) (xy -1.27 -0.635) (xy -1.905 0)
+						(xy -4.445 0.889) (xy -3.81 0.889)
 					)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "AudioJack2_Ground_1_1"
+				(polyline
+					(pts
+						(xy -4.445 -3.556) (xy -4.445 0.889)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 5.08) (xy -3.81 0.889)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 0.889) (xy -3.175 0.889)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 0.889) (xy -3.175 -3.556)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 -3.556) (xy -4.445 -3.556)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.143 1.27) (xy -2.413 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.127 2.54) (xy -1.143 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.127 -3.81) (xy -1.143 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.397 -5.08) (xy 0.127 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy -3.81 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 0.127 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 1.397 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
+					(at 12.7 5.08 180)
+					(length 5.08)
 					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "G"
+					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
+					(at 12.7 2.54 180)
+					(length 5.08)
 					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "S"
+					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
+					(at 12.7 -5.08 180)
+					(length 5.08)
 					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "T"
+					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -7132,6 +7359,12 @@
 		(uuid "0cd37291-5f62-4753-a3a3-439cc1a9e326")
 	)
 	(junction
+		(at 198.12 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "14c1c819-0659-4002-bbb7-c101e34b0ed1")
+	)
+	(junction
 		(at 52.07 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7186,10 +7419,10 @@
 		(uuid "536b94da-4530-4bf6-99e3-55c12518210c")
 	)
 	(junction
-		(at 198.12 146.05)
+		(at 195.58 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5af4a5d6-b2dd-4175-bdab-99daf8765a4f")
+		(uuid "585dad84-5756-4b11-8784-139a28cbe073")
 	)
 	(junction
 		(at 24.13 124.46)
@@ -7208,12 +7441,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "65d41394-e761-4ff6-83ab-3f01b3a7eb6f")
-	)
-	(junction
-		(at 195.58 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "673c108b-9776-41f5-9e3e-80ed28f02b4f")
 	)
 	(junction
 		(at 45.72 181.61)
@@ -7310,12 +7537,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bee3bc02-c05d-4259-91fc-04bbf438b2c0")
-	)
-	(junction
-		(at 193.04 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfd7ed4a-fdbf-4b54-87e9-391a5a9b910f")
 	)
 	(junction
 		(at 247.65 121.92)
@@ -7583,16 +7804,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 146.05) (xy 201.93 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0251f0b0-55d5-4bb9-8258-b7abe252dd61")
-	)
-	(wire
-		(pts
 			(xy 69.85 31.75) (xy 76.2 31.75)
 		)
 		(stroke
@@ -7650,6 +7861,16 @@
 			(type default)
 		)
 		(uuid "079751f6-0ad3-4058-bb82-a45fb1715adc")
+	)
+	(wire
+		(pts
+			(xy 198.12 128.27) (xy 201.93 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "083def51-19f2-4367-b8d5-dea4790c1b92")
 	)
 	(wire
 		(pts
@@ -7923,23 +8144,13 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 125.73) (xy 189.23 125.73)
+			(xy 182.88 125.73) (xy 195.58 125.73)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2a6a3ec3-5a09-4f5f-bc04-4992af815054")
-	)
-	(wire
-		(pts
-			(xy 201.93 135.89) (xy 201.93 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b5fc8ad-7722-491a-adf6-257d56fe7b4d")
 	)
 	(wire
 		(pts
@@ -7950,6 +8161,16 @@
 			(type default)
 		)
 		(uuid "2bda0d60-df26-463d-847c-3077aafc02f8")
+	)
+	(wire
+		(pts
+			(xy 195.58 124.46) (xy 195.58 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d7ac252-4cff-4545-b494-88c906e219f0")
 	)
 	(wire
 		(pts
@@ -8313,6 +8534,16 @@
 	)
 	(wire
 		(pts
+			(xy 198.12 128.27) (xy 198.12 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a75b803-f89e-4577-95a9-126b0e82a638")
+	)
+	(wire
+		(pts
 			(xy 57.15 181.61) (xy 68.58 181.61)
 		)
 		(stroke
@@ -8353,6 +8584,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 130.81) (xy 195.58 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5faaf40c-fdc9-470a-97a1-07be1dafb6e6")
+	)
+	(wire
+		(pts
 			(xy 182.88 38.1) (xy 182.88 93.98)
 		)
 		(stroke
@@ -8363,7 +8604,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 124.46) (xy 198.12 146.05)
+			(xy 198.12 124.46) (xy 198.12 128.27)
 		)
 		(stroke
 			(width 0)
@@ -8383,13 +8624,13 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 125.73) (xy 189.23 128.27)
+			(xy 201.93 138.43) (xy 201.93 133.35)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "63a61878-75f4-4824-8858-9e213e71c3ca")
+		(uuid "64856815-502c-43f4-b501-dee545e655a5")
 	)
 	(wire
 		(pts
@@ -8460,16 +8701,6 @@
 			(type default)
 		)
 		(uuid "69c6f30b-cc8c-42ad-9330-a13905de383a")
-	)
-	(wire
-		(pts
-			(xy 195.58 128.27) (xy 196.85 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c864aa0-8d4f-431c-a7eb-b5df015c7fec")
 	)
 	(wire
 		(pts
@@ -8613,6 +8844,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 130.81) (xy 195.58 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82d17ea4-e63a-4716-9c31-7231daca30a8")
+	)
+	(wire
+		(pts
 			(xy 130.81 130.81) (xy 139.7 130.81)
 		)
 		(stroke
@@ -8643,7 +8884,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 133.35) (xy 193.04 130.81)
+			(xy 193.04 124.46) (xy 193.04 133.35)
 		)
 		(stroke
 			(width 0)
@@ -8853,16 +9094,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 124.46) (xy 193.04 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a857ea0b-58eb-4fa6-88b4-65715437eae7")
-	)
-	(wire
-		(pts
 			(xy 153.67 99.06) (xy 182.88 99.06)
 		)
 		(stroke
@@ -8910,16 +9141,6 @@
 			(type default)
 		)
 		(uuid "b0dae8a3-70d1-46fb-a0d0-3201ff2d6f91")
-	)
-	(wire
-		(pts
-			(xy 193.04 130.81) (xy 196.85 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0e43df3-6f1a-4876-ad2e-d8a20f2d2f97")
 	)
 	(wire
 		(pts
@@ -9143,16 +9364,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 124.46) (xy 195.58 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8df9d55-76ac-49d1-a854-94d989673df5")
-	)
-	(wire
-		(pts
 			(xy 152.4 146.05) (xy 152.4 125.73)
 		)
 		(stroke
@@ -9353,16 +9564,6 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 128.27) (xy 195.58 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7124af2-ea50-4cff-940e-5d447d01e95d")
-	)
-	(wire
-		(pts
 			(xy 147.32 130.81) (xy 149.86 130.81)
 		)
 		(stroke
@@ -9500,6 +9701,16 @@
 			(type default)
 		)
 		(uuid "fee27f30-f7b4-477e-ab37-e57706f2b8ec")
+	)
+	(wire
+		(pts
+			(xy 201.93 133.35) (xy 193.04 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff2703b8-9cb5-406e-a40c-b8b0fe528b5f")
 	)
 	(label "BC1"
 		(at 63.5 157.48 180)
@@ -10098,7 +10309,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 34.29 135.89 0)
 			(effects
 				(font
@@ -10201,7 +10412,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 265.43 90.17 0)
 			(effects
 				(font
@@ -10439,7 +10650,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 228.6 57.15 0)
 			(effects
 				(font
@@ -10542,7 +10753,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 260.35 134.62 0)
 			(effects
 				(font
@@ -10645,7 +10856,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-40_W15.24mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-40_W15.24mm_LongPads"
 			(at 85.09 143.51 0)
 			(effects
 				(font
@@ -11024,7 +11235,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 153.67 59.69 0)
 			(effects
 				(font
@@ -11127,7 +11338,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 190.5 96.52 0)
 			(effects
 				(font
@@ -11362,7 +11573,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 34.29 116.84 0)
 			(effects
 				(font
@@ -11435,79 +11646,6 @@
 			(project ""
 				(path "/84e03406-665a-4400-b991-4fa8ce9d51c9"
 					(reference "U2.1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Audio:AudioJack2_Ground")
-		(at 201.93 130.81 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3e8b195e-0278-40db-b660-55fdc072a5d4")
-		(property "Reference" "CO1"
-			(at 202.438 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "PSG01538"
-			(at 201.93 124.968 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal_CircularHoles"
-			(at 201.93 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 201.93 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Audio Jack, 2 Poles (Mono / TS), Grounded Sleeve"
-			(at 201.93 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "T"
-			(uuid "1a282df1-4413-4b72-b7e6-abdbdfe172ac")
-		)
-		(pin "S"
-			(uuid "c38ebc0f-7422-44a3-b904-59f898be201a")
-		)
-		(pin "G"
-			(uuid "69b7f9e4-dba6-4142-87de-260fdb4a6b90")
-		)
-		(instances
-			(project ""
-				(path "/84e03406-665a-4400-b991-4fa8ce9d51c9"
-					(reference "CO1")
 					(unit 1)
 				)
 			)
@@ -11806,7 +11944,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 146.05 83.82 0)
 			(effects
 				(font
@@ -12311,7 +12449,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 247.65 134.62 0)
 			(effects
 				(font
@@ -12659,6 +12797,198 @@
 		)
 	)
 	(symbol
+		(lib_id "AudioJack:SJ1-3523N")
+		(at 214.63 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "81059a2b-791a-4978-824e-f174f36f7503")
+		(property "Reference" "J3"
+			(at 214.63 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SJ1-3523N"
+			(at 214.63 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "AudioJack:CUI_SJ1-3523N"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Same Sky"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "6.25 mm"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SJ1-3523N/Same+Sky/view-part/?ref=eda"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1.05"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SJ1-3523N/Same+Sky/view-part/?ref=snap"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SJ1-3523N"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "3.5 mm, Stereo, Right Angle, Through Hole, 3 Conductors, 0 Internal Switches, Audio Jack Connector"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "CUI Devices"
+			(at 214.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b1c26218-dca2-436c-aef9-80040135dbe8")
+		)
+		(pin "3"
+			(uuid "fa8f4cfc-bf43-4de4-9f79-af83b98006fa")
+		)
+		(pin "2"
+			(uuid "386574f1-d6ff-442d-89a8-94a187cfc729")
+		)
+		(instances
+			(project ""
+				(path "/84e03406-665a-4400-b991-4fa8ce9d51c9"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_DIP_x03")
 		(at 118.11 59.69 0)
 		(unit 1)
@@ -12683,7 +13013,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx03_Slide_9.78x9.8mm_W8.61mm_P2.54mm"
+		(property "Footprint" "Button_Switch_THT:SW_DIP_SPSTx03_Slide_9.78x9.8mm_W7.62mm_P2.54mm"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -12827,7 +13157,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 234.95 134.62 0)
 			(effects
 				(font
@@ -12930,7 +13260,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 262.89 38.1 0)
 			(effects
 				(font
@@ -13102,7 +13432,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 254 59.69 0)
 			(effects
 				(font
@@ -13273,7 +13603,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 204.47 40.64 0)
 			(effects
 				(font
@@ -13378,7 +13708,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 273.05 134.62 0)
 			(effects
 				(font
@@ -14291,7 +14621,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 143.51 29.21 0)
 			(effects
 				(font
@@ -14528,7 +14858,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 173.99 38.1 0)
 			(effects
 				(font
@@ -14631,7 +14961,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
+		(property "Footprint" "Package_DIP:DIP-14_W10.16mm_LongPads"
 			(at 146.05 99.06 0)
 			(effects
 				(font

@@ -228,6 +228,10 @@
   "erc": {
     "erc_exclusions": [
       [
+        "footprint_link_issues|2146300|1333500|81059a2b-791a-4978-824e-f174f36f7503|00000000-0000-0000-0000-000000000000|||",
+        ""
+      ],
+      [
         "pin_to_pin|698500|317500|ffb1149f-c668-43d4-b1f4-5364c7fcb132|8c40a563-3d92-4462-b8ac-5fe6f34897c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
         "This is Ok as the pin can be used to power the ZX81 as well as the ZX81 powering the expansion."
       ],
