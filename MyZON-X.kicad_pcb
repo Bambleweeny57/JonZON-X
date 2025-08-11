@@ -7,6 +7,11 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "JONZON-X-81")
+		(date "2025-08-11")
+		(rev "1.0")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
@@ -74,7 +79,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "FabFiles")
 		)
 	)
 	(net 0 "")
@@ -9954,7 +9959,7 @@
 		(layer "Edge.Cuts")
 		(uuid "fe79e3a1-2cb4-40ef-9fef-bf000919eb12")
 	)
-	(gr_text "JONZON-X-81\n2025 - J.Gratton"
+	(gr_text "JONZON-X-81 Rev: 1.0\n2025 - J.Gratton"
 		(at 54.61 131.445 0)
 		(layer "F.SilkS")
 		(uuid "03ebb639-d889-413d-a06b-8df86bae2360")

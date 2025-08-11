@@ -623,7 +623,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "MyZON-X.net",
-      "plot": "",
+      "plot": "FabFiles",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
