@@ -66,18 +66,6 @@
         [
           "silk_edge_clearance|112972098|48260000|fe79e3a1-2cb4-40ef-9fef-bf000919eb12|ed075dd9-00f9-4f80-8650-d81f08f1d99a",
           ""
-        ],
-        [
-          "track_dangling|100002100|134440800|ce1ba970-dc13-4740-9e44-315d16baf885|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "track_dangling|100002100|134440800|e1c655cb-c78b-4365-bd1d-7bafb4db2ad8|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "track_dangling|91535700|122936000|0eaf853d-3473-461a-a7ca-474f91a804a5|00000000-0000-0000-0000-000000000000",
-          ""
         ]
       ],
       "meta": {
@@ -279,6 +267,18 @@
         ""
       ],
       [
+        "pin_to_pin|647700|317500|ffb1149f-c668-43d4-b1f4-5364c7fcb132|fff77697-07bd-4855-b45f-b67a0eab2222|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        ""
+      ],
+      [
+        "pin_to_pin|647700|393700|b20a9bf4-a1c3-4fb2-a9a9-47556ceb796f|a5465d94-979c-4e11-a828-f66f1b8eb3c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        ""
+      ],
+      [
+        "pin_to_pin|647700|419100|5d5e4f5a-17af-444f-9b77-81e2d662fe86|a5465d94-979c-4e11-a828-f66f1b8eb3c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
+        ""
+      ],
+      [
         "pin_to_pin|698500|317500|ffb1149f-c668-43d4-b1f4-5364c7fcb132|8c40a563-3d92-4462-b8ac-5fe6f34897c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
         "This is Ok as the pin can be used to power the ZX81 as well as the ZX81 powering the expansion."
       ],
@@ -301,6 +301,10 @@
       [
         "pin_to_pin|698500|419100|5d5e4f5a-17af-444f-9b77-81e2d662fe86|a5465d94-979c-4e11-a828-f66f1b8eb3c8|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9",
         "Can be used to power the ZX81 as well as the ZX81 to power the PSG"
+      ],
+      [
+        "power_pin_not_driven|1828800|1511300|9cf46f30-0322-4340-9e8c-05b2db7dfa80|00000000-0000-0000-0000-000000000000|/84e03406-665a-4400-b991-4fa8ce9d51c9|/84e03406-665a-4400-b991-4fa8ce9d51c9|",
+        ""
       ]
     ],
     "meta": {
@@ -551,7 +555,7 @@
       },
       {
         "clearance": 0.25,
-        "name": "GND",
+        "name": "AUDIO_GND",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -561,9 +565,19 @@
       },
       {
         "clearance": 0.25,
-        "name": "VCC",
+        "name": "GND",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "via_diameter": 0.8,
+        "via_drill": 0.4
+      },
+      {
+        "clearance": 0.25,
+        "name": "VCC",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.0,
         "via_diameter": 0.8,
@@ -615,6 +629,10 @@
       {
         "netclass": "VCC",
         "pattern": "VCC"
+      },
+      {
+        "netclass": "AUDIO_GND",
+        "pattern": "GND_AUDIO"
       }
     ]
   },
