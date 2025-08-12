@@ -16,6 +16,6 @@ https://www.muzines.co.uk/articles/micromusic/4456
 https://www.youtube.com/watch?v=Kemn_Q3tHYs
 https://hackaday.io/project/184361-zx8081-homebrew-clone/log/203915-my-project-log-jan-mar2021
 
-if the initial revision works there may be additions to support, RAM, ROM and a Joystick Port as time permits.
+If the initial revision works there may be additions to support, RAM, ROM and a Joystick Port as time permits.
 
 This is my first attempt at a KiCad project and Github Repo, so a big learning curve, though I have used other EDA's and Github.
