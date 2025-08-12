@@ -5,12 +5,12 @@
       "Application": "Pcbnew",
       "Version": "9.0.3"
     },
-    "CreationDate": "2025-08-12T19:58:24+01:00"
+    "CreationDate": "2025-08-12T20:20:59+01:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "MyZON-X",
-      "GUID": "4d795a4f-4e2d-4582-9e6b-696361645f70",
+      "Name": "JONZON-X-81",
+      "GUID": "4a4f4e5a-4f4e-42d5-982d-38312e6b6963",
       "Revision": "1.0"
     },
     "Size": {
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "MyZON-X-F_Cu.gbr",
+      "Path": "JONZON-X-81-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-B_Cu.gbr",
+      "Path": "JONZON-X-81-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-F_Paste.gbr",
+      "Path": "JONZON-X-81-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-B_Paste.gbr",
+      "Path": "JONZON-X-81-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-F_Silkscreen.gbr",
+      "Path": "JONZON-X-81-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-B_Silkscreen.gbr",
+      "Path": "JONZON-X-81-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "MyZON-X-F_Mask.gbr",
+      "Path": "JONZON-X-81-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "MyZON-X-B_Mask.gbr",
+      "Path": "JONZON-X-81-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "MyZON-X-Edge_Cuts.gbr",
+      "Path": "JONZON-X-81-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }

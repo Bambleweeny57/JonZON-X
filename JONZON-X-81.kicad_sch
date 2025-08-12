@@ -5,7 +5,7 @@
 	(uuid "84e03406-665a-4400-b991-4fa8ce9d51c9")
 	(paper "A4")
 	(title_block
-		(title "JonZON-X")
+		(title "JONZON-X-81")
 		(date "2025-08-01")
 		(rev "1.0")
 	)
@@ -7575,7 +7575,7 @@
 		)
 		(uuid "20948083-836e-4182-86ff-689c4d8bf819")
 	)
-	(text "Decoupling"
+	(text "IC Decoupling"
 		(exclude_from_sim no)
 		(at 43.434 178.308 0)
 		(effects
