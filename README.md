@@ -84,6 +84,114 @@ If the initial revision works, future additions may include:
 
 ---
 
+## 🧪 Test Routine
+
+To verify AY-3-8910 operation, type in the following ZX81 BASIC program:
+
+```basic
+10 REM ZONTEST - AY-3-8910 Test for JonZON-X
+20 LET A=7
+30 LET B=63
+40 LET C=255
+50 LET D=191
+60 OUT C,A
+70 OUT D,B
+80 FOR I=1 TO 1000 : NEXT I
+90 LET A=8
+100 LET B=15
+110 OUT C,A
+120 OUT D,B
+130 FOR I=1 TO 1000 : NEXT I
+140 LET A=13
+150 LET B=9
+160 OUT C,A
+170 OUT D,B
+180 GOTO 180
+
+## 🧪 Envelope & Stereo Test
+
+To verify stereo output and envelope control, type in the following ZX81 BASIC program:
+
+```basic
+10 REM ZONTEST2 - Envelope & Stereo Test
+20 LET C=255
+30 LET D=191
+40 LET R=7
+50 LET V=63
+60 OUT C,R
+70 OUT D,V
+80 LET R=8
+90 LET V=15
+100 OUT C,R
+110 OUT D,V
+120 LET R=9
+130 LET V=15
+140 OUT C,R
+150 OUT D,V
+160 LET R=10
+170 LET V=15
+180 OUT C,R
+190 OUT D,V
+200 FOR E=0 TO 15
+210 LET R=13
+220 OUT C,R
+230 OUT D,E
+240 FOR I=1 TO 1000 : NEXT I
+250 NEXT E
+260 GOTO 200
+
+### ⏱️ Test 3: Envelope Period Sweep
+
+```basic
+10 REM ZONTEST3 - Envelope Period Sweep
+20 LET C=255
+30 LET D=191
+40 LET R=7
+50 LET V=63
+60 OUT C,R
+70 OUT D,V
+80 LET R=8
+90 LET V=15
+100 OUT C,R
+110 OUT D,V
+120 LET R=13
+130 LET V=9
+140 OUT C,R
+150 OUT D,V
+160 FOR P=0 TO 255 STEP 16
+170 LET R=11
+180 OUT C,R
+190 OUT D,P
+200 LET R=12
+210 OUT C,R
+220 OUT D,0
+230 FOR I=1 TO 1000 : NEXT I
+240 NEXT P
+250 GOTO 160
+
+### 🎹 Test 4: Multi-PSG Selection via A5/A6
+
+```basic
+10 REM ZONTEST4 - Multi-PSG Selection Test
+20 LET C1=255
+30 LET C2=223
+40 LET C3=191
+50 LET D=191
+60 LET R=8
+70 LET V=15
+80 OUT C1,R
+90 OUT D,V
+100 FOR I=1 TO 500 : NEXT I
+110 OUT C2,R
+120 OUT D,V
+130 FOR I=1 TO 500 : NEXT I
+140 OUT C3,R
+150 OUT D,V
+160 FOR I=1 TO 500 : NEXT I
+170 GOTO 80
+
+---
+
 ## 🧪 Notes
 
 This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve—and a preservation effort.
