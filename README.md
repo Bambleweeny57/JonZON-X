@@ -64,6 +64,24 @@ This schematic snippet shows how BDIR and BC1 are generated using 74HC02, 74HC08
 
 ---
 
+## 🎚️ DIP Switch Mapping for PSG Selection
+
+JonZON-X supports up to three AY-3-8910 PSGs using configurable address lines via DIP switches. The DIP switches control A4, A5, and A6 to select which PSG is active.
+
+| PSG   | A4 | A5 | A6 | Address (Binary) | Address (Decimal) |
+|-------|----|----|----|------------------|-------------------|
+| PSG1  | 1  | 0  | 0  | `11111111`       | 255               |
+| PSG2  | 0  | 1  | 0  | `11101111`       | 239               |
+| PSG3  | 0  | 0  | 1  | `11011111`       | 223               |
+
+- **A4, A5, A6** are mutually exclusive: only one should be active at a time.
+- These bits are part of the PSG register select address.
+- DIP switches override the default A4–A6 lines from the ZX81.
+
+This mapping allows users to select which PSG responds to register writes, enabling multi-chip expansion and stereo mixing.
+
+---
+
 ## 📚 Historical References
 
 - [ZON-X-81 Archive (1982 Bi-Pak)](https://archive.org/details/ZON_X-81_1982_Bi-Pak_GB)
@@ -80,7 +98,6 @@ If the initial revision works, future additions may include:
 - RAM and ROM expansion
 - Joystick port
 - Enhanced stereo mixing
-- Configurable PSG selection
 
 ---
 
@@ -169,26 +186,26 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 240 NEXT P
 250 GOTO 160
 
-### 🎹 Test 4: Multi-PSG Selection via A5/A6
+### 🧪 Test 4: DIP-Selectable PSG Verification
 
 ```basic
-10 REM ZONTEST4 - Multi-PSG Selection Test
-20 LET C1=255
-30 LET C2=223
-40 LET C3=191
-50 LET D=191
-60 LET R=8
-70 LET V=15
-80 OUT C1,R
-90 OUT D,V
-100 FOR I=1 TO 500 : NEXT I
-110 OUT C2,R
-120 OUT D,V
-130 FOR I=1 TO 500 : NEXT I
-140 OUT C3,R
+10 REM ZONTEST4 - DIP Switch PSG Selection Test
+20 LET D=191
+30 LET R=8
+40 LET V=15
+50 LET C=255
+60 OUT C,R
+70 OUT D,V
+80 FOR I=1 TO 500 : NEXT I
+90 LET C=239
+100 OUT C,R
+110 OUT D,V
+120 FOR I=1 TO 500 : NEXT I
+130 LET C=223
+140 OUT C,R
 150 OUT D,V
 160 FOR I=1 TO 500 : NEXT I
-170 GOTO 80
+170 GOTO 50
 
 ---
 
