@@ -1,74 +1,77 @@
-# ZON-X Recreation
-My attempt at recreating the ZON-X-81 Sound Box by Bit-Pak.
+# 🎵 JonZON-X AY-3-8910 Sound Expansion for ZX81
 
-This would use the AY-3-8910 rather than the AY-3-8912 due to current costs.
+This is my recreation of the **ZON-X-81 Sound Box** by Bi-Pak, adapted for modern components and improved documentation. It uses the **AY-3-8910** instead of the AY-3-8912 due to availability and cost. The output is a mixed stereo line-out rather than the original onboard speaker.
 
-it will have a mixed stereo line out rather than the inbuilt speaker of the origional.
-
-I will also divide the CPU clock as the origional did to save a clock circuit.
-
-Various sources have been used to create the starts of this project.
-
-https://archive.org/details/ZON_X-81_1982_Bi-Pak_GB
-https://revspace.nl/Zon_ZX-81_Programmable_Sound_Generator_expansion_for_ZX81PLUS35_with_working_SD-Card
-https://github.com/mahjongg2/ZON-compatible-PSG-with-SD-interface-for-ZX81plus35-ZX81
-https://www.muzines.co.uk/articles/micromusic/4456
-https://www.youtube.com/watch?v=Kemn_Q3tHYs
-https://hackaday.io/project/184361-zx8081-homebrew-clone/log/203915-my-project-log-jan-mar2021
-
-If the initial revision works there may be additions to support, RAM, ROM and a Joystick Port as time permits.
-
-This is my first attempt at a KiCad project and Github Repo, so a big learning curve, though I have used other EDA's and Github.
-
-## 🔧 AY-3-8910 Control Logic
-
-To interface the AY-3-8910 with the ZX81, we derive **BDIR** and **BC1** from address and control lines. The typical decode logic uses:
-
-- `A2` and `A9` for port selection
-- `/WR`, `/RD`, and `/IOREQ` for control timing
-
-### 🧠 Logic Block
-
-```
-Inputs:
-  A2, A9, /WR, /RD, /IOREQ
-
-Derived signals:
-  BC1  = NOT(A2) AND A9 AND /IOREQ AND /RD
-  BDIR = NOT(A2) AND A9 AND /IOREQ AND /WR
-```
-
-This logic ensures that:
-
-- **Write to register**: BDIR=1, BC1=1  
-- **Write to PSG port**: BDIR=1, BC1=0  
-- **Read from PSG port**: BDIR=0, BC1=1  
-- **Inactive**: BDIR=0, BC1=0
+I’ve also divided the CPU clock as the original did, avoiding the need for a separate oscillator.
 
 ---
 
-## 📊 AY-3-8910 Truth Table
+## 📚 Historical References
 
-| Operation         | BDIR | BC1 | Description                    |
-|------------------|------|-----|--------------------------------|
-| Inactive         |  0   |  0  | No operation                   |
-| Read from PSG    |  0   |  1  | Read from selected port        |
-| Write to PSG     |  1   |  0  | Write to selected port         |
-| Write to register|  1   |  1  | Select register to access next |
+This project draws from multiple sources to ensure accuracy and compatibility:
+
+- [ZON-X-81 Manual (1982)](https://archive.org/details/ZON_X-81_1982_Bi-Pak_GB)
+- [RevSpace ZON-ZX81 PSG Expansion](https://revspace.nl/Zon_ZX-81_Programmable_Sound_Generator_expansion_for_ZX81PLUS35_with_working_SD-Card)
+- [Mahjongg2’s ZON-Compatible PSG](https://github.com/mahjongg2/ZON-compatible-PSG-with-SD-interface-for-ZX81plus35-ZX81)
+- [Micromusic Article](https://www.muzines.co.uk/articles/micromusic/4456)
+- [ZX8081 Homebrew Clone](https://hackaday.io/project/184361-zx8081-homebrew-clone/log/203915-my-project-log-jan-mar2021)
 
 ---
 
-## 🧪 ZX81 Test Routine
+## 🧠 Control Signal Logic
 
-This BASIC routine selects register 7 and writes a value to enable tone on Channel A:
+The AY-3-8910 requires three control signals: **BDIR**, **BC1**, and **AYSEL**. Here's how they are derived in JonZON-X:
 
-```basic
-10 OUT 127,7   : REM Select register 7
-20 OUT 255,56  : REM Enable tone on Channel A (bitmask)
-30 OUT 127,1   : REM Select register 1 (fine tune A)
-40 OUT 255,200 : REM Set tone frequency
-50 OUT 127,0   : REM Select register 0 (coarse tune A)
-60 OUT 255,1   : REM Set coarse frequency
-```
+### ✅ Signal Derivation
 
-Assuming port 127 selects the register and port 255 writes data, this routine should produce audible output if the decode logic and PSG are wired correctly.
+| Signal | Logic Expression | Gates Used |
+|--------|------------------|------------|
+| **AYSEL** | Not decoded dynamically  
+→ A8 held high  
+→ A9 held low | — |
+| **BDIR** | /IOREQ and /WR combined via  
+→ 74HC02 (inversion)  
+→ 74HC08 (AND)  
+→ 74HC11 (3-input AND) | 74HC02, 74HC08, 74HC11 |
+| **BC1** | /IOREQ, /WR, A2, A7, /RD combined via  
+→ 74HC02 (inversion)  
+→ 74HC08 (AND)  
+→ 74HC11 (3-input AND) | 74HC02, 74HC08, 74HC11 |
+
+---
+
+### 📊 Truth Table
+
+| A8 | A9 | A2 | A7 | /IOREQ | /WR | /RD | BDIR | BC1 | Operation |
+|----|----|----|----|--------|-----|-----|------|-----|-----------|
+| 1  | 0  | 1  | 1  | 0      | 0   | 1   | 1    | 1   | Write to register |
+| 1  | 0  | 1  | 1  | 0      | 0   | 0   | 1    | 0   | Write to PSG |
+| 1  | 0  | 1  | 1  | 0      | 1   | 0   | 0    | 1   | Read from PSG |
+| any| any| any| any| any    | any | any | 0    | 0   | Inactive |
+
+---
+
+## 🖼️ Visual Decode Logic
+
+To help visualize the control signal derivation, here’s a schematic snippet showing how **/IOREQ**, **BDIR**, and **BC1** are shaped using **74HC02**, **74HC08**, and **74HC11** gates. **AYSEL** is statically constrained by tying **A8 high** and **A9 low**.
+
+![AY Control Logic](Images/AY_Control_Logic.png)
+
+This logic ensures compatibility with legacy ZON-X-81 software while simplifying address decoding and supporting future PSG expansion.
+
+---
+
+## 🛠️ Future Additions
+
+If the initial revision works, future enhancements may include:
+
+- RAM and ROM support
+- Joystick port
+- Second and third PSGs using A5 and A6
+
+---
+
+## 🧪 Development Notes
+
+This is my first KiCad project and GitHub repo, so it’s a learning curve. I’ve used other EDA tools before, but this is my first full open-source release. Contributions and feedback are welcome!
+
