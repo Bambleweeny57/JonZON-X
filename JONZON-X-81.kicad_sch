@@ -7681,16 +7681,16 @@
 		(uuid "0cd37291-5f62-4753-a3a3-439cc1a9e326")
 	)
 	(junction
+		(at 87.63 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1a74eeec-35f6-4e8f-b8d1-0924a05a8705")
+	)
+	(junction
 		(at 260.35 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "204e3a42-8756-40c3-90aa-8b62a46c806d")
-	)
-	(junction
-		(at 90.17 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2a9b8c8d-e7d9-4e8a-a3a5-2dec914586d7")
 	)
 	(junction
 		(at 64.77 41.91)
@@ -8304,17 +8304,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 31.75) (xy 97.79 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18402f03-295b-49cb-8ac3-0da2a9d2c7f7")
-	)
-	(wire
-		(pts
-			(xy 97.79 29.21) (xy 97.79 31.75)
+			(xy 91.44 29.21) (xy 91.44 31.75)
 		)
 		(stroke
 			(width 0)
@@ -8744,16 +8734,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 44.45) (xy 90.17 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47a5af5a-378b-4263-99cf-a7adcda7721c")
-	)
-	(wire
-		(pts
 			(xy 43.18 106.68) (xy 43.18 119.38)
 		)
 		(stroke
@@ -8784,7 +8764,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 31.75) (xy 90.17 36.83)
+			(xy 87.63 31.75) (xy 87.63 36.83)
 		)
 		(stroke
 			(width 0)
@@ -9214,6 +9194,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 31.75) (xy 91.44 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96a974a0-7ea8-4a33-ab5e-2f5b8f8d3ebd")
+	)
+	(wire
+		(pts
 			(xy 193.04 124.46) (xy 193.04 133.35)
 		)
 		(stroke
@@ -9304,7 +9294,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 31.75) (xy 90.17 31.75)
+			(xy 82.55 31.75) (xy 87.63 31.75)
 		)
 		(stroke
 			(width 0)
@@ -9981,6 +9971,16 @@
 			(type default)
 		)
 		(uuid "ede297f0-a3a5-4cb8-b2b0-88764000bac2")
+	)
+	(wire
+		(pts
+			(xy 87.63 44.45) (xy 87.63 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eee2dedc-f4e2-42be-a33c-ccb389f739c7")
 	)
 	(wire
 		(pts
@@ -12003,7 +12003,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 90.17 46.99 0)
+		(at 87.63 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12011,7 +12011,7 @@
 		(dnp no)
 		(uuid "3d0be394-19b5-4852-80d7-5a730941c44d")
 		(property "Reference" "#PWR014"
-			(at 90.17 53.34 0)
+			(at 87.63 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12020,7 +12020,7 @@
 			)
 		)
 		(property "Value" "GND_AUDIO"
-			(at 90.17 50.8 0)
+			(at 87.63 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12028,7 +12028,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 46.99 0)
+			(at 87.63 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12037,7 +12037,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 46.99 0)
+			(at 87.63 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12046,7 +12046,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 46.99 0)
+			(at 87.63 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12439,7 +12439,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 97.79 29.21 0)
+		(at 91.44 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12447,7 +12447,7 @@
 		(dnp no)
 		(uuid "4fe26b65-bb8e-44f8-b04d-f14dcae74210")
 		(property "Reference" "#FLG03"
-			(at 97.79 27.305 0)
+			(at 91.44 27.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12456,7 +12456,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 97.79 25.4 0)
+			(at 91.44 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12464,7 +12464,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 29.21 0)
+			(at 91.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12473,7 +12473,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 29.21 0)
+			(at 91.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12482,7 +12482,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 97.79 29.21 0)
+			(at 91.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12841,7 +12841,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 40.64 0)
+		(at 87.63 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12849,7 +12849,7 @@
 		(dnp no)
 		(uuid "6693fab6-53d8-49f9-a745-d4d7e77fd527")
 		(property "Reference" "R12"
-			(at 88.392 42.672 90)
+			(at 85.852 42.672 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12858,7 +12858,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 90.17 42.164 90)
+			(at 87.63 42.164 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12867,7 +12867,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-			(at 88.392 40.64 90)
+			(at 85.852 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12876,7 +12876,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 40.64 0)
+			(at 87.63 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12885,7 +12885,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 90.17 40.64 0)
+			(at 87.63 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
