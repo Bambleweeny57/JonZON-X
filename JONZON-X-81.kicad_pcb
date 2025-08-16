@@ -10152,6 +10152,18 @@
 		(layer "Edge.Cuts")
 		(uuid "fe79e3a1-2cb4-40ef-9fef-bf000919eb12")
 	)
+	(gr_text "Rev: 1.1 was a change to the Audio Jack connections.\nLeft and Right where connected to the Shunts."
+		(at 177.8 171.45 0)
+		(layer "F.Cu")
+		(uuid "f2454a65-d893-49d0-99b5-5e18ddf848b1")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.2)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "JONZON-X-81 Rev: 1.1\n2025 - J.Gratton"
 		(at 54.61 131.445 0)
 		(layer "F.SilkS")
