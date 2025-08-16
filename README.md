@@ -215,6 +215,12 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 
 ## 📅 Revision History
 
+### 📝 Rev 1.0 Testing Note — Stereo Jack Adaptation
+- **Socket Type:** 3-pin stereo jacks used in place of shunted 5-pin variants.
+- **Pad Bridging:** Inner pads manually jumped to outer signal pads; ground positioned at center front.
+- **Trade-off:** Left and Right channels will be reversed — acceptable for initial validation.
+- **Rationale:** Simplifies early testing without requiring shunt headers. Prioritizes proof-of-function over stereo fidelity
+
 ### 📝 Rev 1.1 — Audio Jack Correction
 - **Issue:** Left and Right channels were misrouted via Shunts A and B.
 - **Fix:** Channel A and B were reversed in the schematic to compensate for the physical swap.
