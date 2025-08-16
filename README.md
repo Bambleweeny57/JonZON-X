@@ -213,11 +213,12 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 
 ---
 
-## 📅 Revisions
+## 📅 Revision History
 
-Rev: 1.1 was a change to the Audio Jack connections.
-Left and Right where connected to Shunts A and B.
-This also resulted in a Left and Right swap, so Channel A and B where reveresed to compensate.
+### 📝 Rev 1.1 — Audio Jack Correction
+- **Issue:** Left and Right channels were misrouted via Shunts A and B.
+- **Fix:** Channel A and B were reversed in the schematic to compensate for the physical swap.
+- **Impact:** Stereo output now matches expected channel mapping. Updated KiCad files reflect this correction.
 
 ---
 
