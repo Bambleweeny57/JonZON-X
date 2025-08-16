@@ -211,10 +211,9 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 170 GOTO 50
 ...
 
-```
+---
+
 ## 🧪 Notes
 
-This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve—and a preservation effort.
-
----
+This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve and a preservation effort.
 
