@@ -124,6 +124,7 @@ To verify AY-3-8910 operation, type in the following ZX81 BASIC program:
 160 OUT C,A
 170 OUT D,B
 180 GOTO 180
+```
 
 ## 🧪 Envelope & Stereo Test
 
@@ -156,6 +157,7 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 240 FOR I=1 TO 1000 : NEXT I
 250 NEXT E
 260 GOTO 200
+```
 
 ### ⏱️ Test 3: Envelope Period Sweep
 
@@ -185,6 +187,7 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 230 FOR I=1 TO 1000 : NEXT I
 240 NEXT P
 250 GOTO 160
+```
 
 ### 🧪 Test 4: DIP-Selectable PSG Verification
 
@@ -206,9 +209,9 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 150 OUT D,V
 160 FOR I=1 TO 500 : NEXT I
 170 GOTO 50
+...
 
----
-
+```
 ## 🧪 Notes
 
 This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve—and a preservation effort.
