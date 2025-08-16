@@ -10272,7 +10272,7 @@
 		)
 		(uuid "57854318-a367-4789-b650-49121452f9cd")
 	)
-	(label "OUTB"
+	(label "OUTA"
 		(at 130.81 133.35 180)
 		(effects
 			(font
@@ -10372,7 +10372,7 @@
 		)
 		(uuid "773f5783-c497-4a35-9d49-804a7c35f707")
 	)
-	(label "OUTA"
+	(label "OUTB"
 		(at 130.81 125.73 180)
 		(effects
 			(font

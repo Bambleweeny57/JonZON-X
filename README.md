@@ -213,6 +213,14 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 
 ---
 
-## 🧪 Notes
+## 📅 Revisions
+
+Rev: 1.1 was a change to the Audio Jack connections.
+Left and Right where connected to Shunts A and B.
+This also resulted in a Left and Right swap, so Channel A and B where reveresed to compensate.
+
+---
+
+## 📝 Notes
 
 This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve and a preservation effort.
