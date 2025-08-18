@@ -221,45 +221,21 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 - **Trade-off:** Left and Right channels will be reversed — acceptable for initial validation.
 - **Rationale:** Simplifies early testing without requiring shunt headers. Prioritizes proof-of-function over stereo fidelity
 
-### 📅 Rev 1.1 — Audio Jack Correction
+### 🔄 Rev 1.1 — Audio Jack Correction
 - **Issue:** Left and Right channels were misrouted via Shunts A and B.
 - **Fix:** Channel A and B were reversed in the schematic to compensate for the physical swap.
 - **Impact:** Stereo output now matches expected channel mapping. Updated KiCad files reflect this correction.
 
----
 
-## 🧠 Why JonZON-X Exists
+### 🔄 Rev 1.2 – Stereo Output Mapping Adjustment
 
-Because the ZX81 deserved better. Because debugging shouldn’t feel like deciphering ancient runes. Because Stuart’s design, while noble, was more “experimental jazz” than “structured symphony.” JonZON-X is the answer to every “why doesn’t this work?” moment.
-
-### 🔍 What Sets It Apart
-
-| Feature                  | JonZON-X                          | Stuart’s Design                  |
-|--------------------------|-----------------------------------|----------------------------------|
-| Bus Timing               | Clean, verified with logic analyzer | “It mostly works, trust me”     |
-| DIP Switch Mapping       | Documented and intuitive          | Cryptic and undocumented         |
-| Footprint Accuracy       | Matches real-world components     | Requires footprint archaeology   |
-| Documentation            | Clear, visual, and collaborative | Sparse and interpretive          |
-| Debuggability            | Built-in overlays and logs        | Bring your own magnifying glass |
-| Decoding Logic           | Sensible address decoding         | NOR gate spaghetti               |
-| Community Support        | Open-source and evolving          | Solo flight                      |
-
-### ⚙️ Technical Specs
-
-- **CPU Compatibility**: ZX81 bus-compliant, tested with real hardware  
-- **Address Decoding**: Clean logic using standard gates (no NOR gate origami)  
-- **Latch Timing**: Verified with logic analyzer, no phantom writes  
-- **Sound Expansion**: AY-3-8910 ready, with proper data bus mapping  
-- **DIP Switches**: Configurable for register selection and debug modes  
-- **Footprints**: Corrected for stereo jacks, headers, and ICs (no guesswork)  
-
-### 🧪 Built for Builders
-
-JonZON-X isn’t just a clone—it’s a platform. Whether you’re adding sound, storage, or just trying to make the thing boot without divine intervention, this is the version that respects your time and your sanity.
-
-### 🤯 About That NOR Gate
-
-Stuart’s decoding logic was… creative. If you’ve ever looked at a schematic and thought, “Is this a logic puzzle or a cry for help?”—you’re not alone. JonZON-X replaces the NOR gate labyrinth with clean, readable decoding that doesn’t require a PhD in Boolean mysticism.
+- **Issue**: Legacy ZON-X-81 software frequently routes noise to Channel B, but JonZON-X previously mixed Channel C to both outputs (a common pattern in other PSG devices, including the ZX Spectrum 128K). This caused noise effects to be isolated to the right channel or lost in stereo playback.
+- **Fix**: Remapped stereo output:
+  - Channel A → Left
+  - Channel B → Mixed (Left + Right)
+  - Channel C → Right  
+  This ensures Channel B (the legacy noise channel) is centered in stereo output.
+- **Impact**: Improved compatibility with original ZON-X-81 programs and demos. Noise effects now play as intended across both channels, preserving the sonic balance of legacy software.
 
 ---
 
