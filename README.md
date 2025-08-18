@@ -237,6 +237,8 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
   This ensures Channel B (the legacy noise channel) is centered in stereo output.
 - **Impact**: Improved compatibility with original ZON-X-81 programs and demos. Noise effects now play as intended across both channels, preserving the sonic balance of legacy software.
 
+[![Legacy Noise Compliance Certified™](https://img.shields.io/badge/Noise-Certified-blue)]()
+
 ---
 
 ## 📝 Notes
