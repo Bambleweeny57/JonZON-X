@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "9.0.3"
     },
-    "CreationDate": "2025-08-16T15:22:46+01:00"
+    "CreationDate": "2025-08-19T20:19:20+01:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "JONZON-X-81",
       "GUID": "4a4f4e5a-4f4e-42d5-982d-38312e6b6963",
-      "Revision": "1.1"
+      "Revision": "1.2"
     },
     "Size": {
       "X": 63.55,

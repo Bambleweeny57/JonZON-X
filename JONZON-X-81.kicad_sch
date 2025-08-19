@@ -7,7 +7,7 @@
 	(title_block
 		(title "JONZON-X-81")
 		(date "2025-08-01")
-		(rev "1.1")
+		(rev "1.2")
 	)
 	(lib_symbols
 		(symbol "74xx:74HCT74"
@@ -7621,7 +7621,7 @@
 	)
 	(text "BDIR	BC1\n0		0					INACTIVE\n0		1	/IORD	XX0FH	READ PSG\n1		0	/IORW	XX0FH	WRITE PSG\n1		1	/IOWR	XXDFH	LATCH ADDRESS\n\n			XX0FH = 0FH = 00001111\n			XXDFH = DFH = 10001111"
 		(exclude_from_sim no)
-		(at 203.962 173.736 0)
+		(at 206.756 171.958 0)
 		(effects
 			(font
 				(size 0.762 0.762)
@@ -7630,9 +7630,9 @@
 		)
 		(uuid "59ddeabf-257d-41d0-91f8-a551e807fdf1")
 	)
-	(text "Channel A is Left\nChannel B is right\nChannel C (normaly noise) is mixed"
+	(text "Channel A is Left\nChannel C is right\nChannel B (normaly noise on ZON-X) is mixed"
 		(exclude_from_sim no)
-		(at 178.562 170.688 0)
+		(at 177.8 168.91 0)
 		(effects
 			(font
 				(size 0.762 0.762)
@@ -10342,7 +10342,7 @@
 		)
 		(uuid "6b8f49d1-a956-457a-9c6a-c1a57f4fd3b9")
 	)
-	(label "OUTC"
+	(label "OUTB"
 		(at 130.81 143.51 180)
 		(effects
 			(font
@@ -10372,7 +10372,7 @@
 		)
 		(uuid "773f5783-c497-4a35-9d49-804a7c35f707")
 	)
-	(label "OUTB"
+	(label "OUTC"
 		(at 130.81 125.73 180)
 		(effects
 			(font
