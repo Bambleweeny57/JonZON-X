@@ -58,7 +58,7 @@ There is **no AYSEL signal**—address selection is handled directly via A0–A4
 
 ## 🖼️ Visual Decode Logic
 
-![AY Control Logic](Images/AY_Control_Logic.png)
+![AY Control Logic](Images/PSG%20Selection%20Logic.png)
 
 This schematic snippet shows how BDIR and BC1 are generated using 74HC02, 74HC08, and 74HC11 gates. Address selection is handled via A0–A4 (or A5/A6 for additional PSGs).
 
