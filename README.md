@@ -242,9 +242,9 @@ To verify stereo output and envelope control, type in the following ZX81 BASIC p
 ### 🔄 Rev 1.3 – Logic Footprint Correction
 - **Issue**: 74HTC Logic IC footprints where set as 400mil wide not 300mil.
 - **Fix**: Change footprints:
-- Corrected 74HCT logic IC footprints from 400mil to 300mil for proper socket fit.
-- Updated KiCad symbols and PCB layout to reflect accurate DIP sizing.
-- Improves build reliability and simplifies future revisions.
+  - Corrected 74HCT logic IC footprints from 400mil to 300mil for proper socket fit.
+  - Updated KiCad symbols and PCB layout to reflect accurate DIP sizing.
+- **Impact**: Improves build reliability and simplifies future revisions.
 
 ---
 
