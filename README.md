@@ -125,8 +125,9 @@ If the initial revision works, future additions may include:
 190 POKE 16516,9
 200 RAND USR 16514
 210 GOTO 210
-
 ```
+- 🔊 ZONTEST1 – Basic Tone Setup: [zontest1.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest1.p)
+
 ### 🧪 Test 2: Envelope & Stereo Test
 
 ```basic
@@ -161,6 +162,7 @@ If the initial revision works, future additions may include:
 290 IF E<16 THEN GOTO 220
 300 GOTO 210
 ```
+- 🎛️ ZONTEST2 – Envelope & Stereo: [zontest2.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest2.p)
 
 ### 🧪 Test 3: Envelope Period Sweep
 
@@ -199,6 +201,7 @@ If the initial revision works, future additions may include:
 320 IF P<256 THEN GOTO 220
 330 GOTO 210
 ```
+- 📈 ZONTEST3 – Envelope Sweep: [zontest3.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest3.p)
 
 ### 🧪 Test 4: DIP-Selectable PSG Verification
 
@@ -234,6 +237,7 @@ If the initial revision works, future additions may include:
 290 IF I<500 THEN GOTO 280
 300 GOTO 120
 ```
+- 🎚️ ZONTEST4 – DIP-Selectable PSGs: [zontest4.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest4.p)
 
 ---
 
