@@ -66,7 +66,7 @@ This schematic snippet shows how BDIR and BC1 are generated using 74HC02 and 74H
 JonZON-X supports ZON X mode using a DIP switch. The DIP switch controls the connection of A4 to the expansion bus to select ZON X compatibility.
 
 | A4 | Address (Binary) | Address (Decimal) |
-|----|------------------|-------------------|
+|--- |------------------|-------------------|
 | 0 |`11110000` | 240 |
 | 1 |`11111111` | 255 |
 
