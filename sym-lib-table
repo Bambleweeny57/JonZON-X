@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "AudioJack")(type "KiCad")(uri "${KIPRJMOD}/Stereo Jack/AudioJack.kicad_sym")(options "")(descr ""))
-  (lib (name "SJ1-3523N")(type "KiCad")(uri "${KIPRJMOD}/Stereo Jack/SJ1-3523N.kicad_sym")(options "")(descr ""))
-)
