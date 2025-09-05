@@ -34,17 +34,17 @@ JonZON-X uses modern 74HC-series gates to derive control signals for the AY-3-89
 | Signal | Logic Expression | Gates Used |
 |--------|------------------|------------|
 | **BDIR** | Derived from /IOREQ and /WR  
-→ Routed through 74HC02 (inversion) and 74HC11 (3-input AND) | 74HC02, 74HC11 |
+|→ Routed through 74HC02 (inversion) and 74HC11 (3-input AND) || 74HC02, 74HC11 |
 | **BC1** | Derived from /IOREQ, /WR, A2, A7, /RD  
-→ Routed through 74HC02 and 74HC11 | 74HC02, 74HC11 |
+|→ Routed through 74HC02 and 74HC11 || 74HC02, 74HC11 |
 
-There is **no AYSEL signal**—address selection is handled directly via A0–A4 (or A5/A6 for additional PSGs).
+There is **no AYSEL signal**—address selection is handled directly via A0–A3/A4.
 
 ---
 
 ## 📊 Truth Table
 
-| A0–A4     0-A3 | A2 | A7 | /IOREQ | /WR | /RD | BDIR | BC1 | Operation         |
+| A0–A4 / A0-A3 | A2 | A7 | /IOREQ | /WR | /RD | BDIR | BC1 | Operation         |
 |--------------- |----|----|--------|-----|-----|------|-----|-------------------|
 | PSG 1 selected | 1  | 1  | 0      | 0   | 1   | 1    | 1   | Write to register |
 | PSG 1 selected | 1  | 1  | 0      | 0   | 0   | 1    | 0   | Write to PSG      |
@@ -61,17 +61,18 @@ This schematic snippet shows how BDIR and BC1 are generated using 74HC02 and 74H
 
 ---
 
-## 🎚️ DIP Switch Mapping for PSG Selection
+## 🎚️ DIP Switch for ZON X compatibility
 
-JonZON-X supports up to three AY-3-8910 PSGs using configurable address lines via DIP switches. The DIP switches control A4, A5, and A6 to select which PSG is active.
+JonZON-X supports ZON X mode using a DIP switch. The DIP switch controls the connection of A4 to the expansion bus to select ZON X compatibility.
 
-| PSG   | A4  | Address (Binary) | Address (Decimal) |
-|-------|----|----|----|------------------|-------------------|
-| PSG1  | 1  | 0  | 0  | `11111111`       | 255               |
+| A4 | Address (Binary) | Address (Decimal) |
+|----|------------------|-------------------|
+| 0 |`11110000` | 240 |
+| 1 |`11111111` | 255 |
 
 - **A4** connection to the ZX81 bus is for ZON X compatibility.
 - The bits are part of the PSG register select address and are high (1) for ZON X-81.
-- The DIP switch overrides the default A4 line from the ZX81.
+- The DIP switch overrides the default A4 line from the ZX81 and sets it high.
 
 ---
 
