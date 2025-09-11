@@ -1,6 +1,6 @@
-# 🎵 JonZON-X AY-3-8912 Sound Expansion for ZX81
+# 🎵 JonZON-X AY-3-8910 Sound Expansion for ZX81
 
-JonZON-X is a modern recreation of the ZON-X-81 Sound Box by Bi-Pak, designed for the ZX81. It uses the AY-3-8912 Programmable Sound Generator (PSG) and supports stereo line-out, and historically accurate address decoding.
+JonZON-X is a modern recreation of the ZON-X-81 Sound Box by Bi-Pak, designed for the ZX81. It uses the AY-3-8910 Programmable Sound Generator (PSG) and supports stereo line-out, optional multi-PSG expansion, and historically accurate address decoding.
 
 This project prioritizes:
 - ✅ Robust signal integrity
@@ -12,20 +12,21 @@ This project prioritizes:
 
 ## 🎯 Goals
 
-- Recreate the original ZON-X-81 using AY-3-8912
+- Recreate the original ZON-X-81 using AY-3-8910 (not AY-3-8912)
 - Provide stereo line-out instead of onboard speaker
 - Divide CPU clock as in the original design
-- Support optional for A4 for ZON X compatibility
+- Support optional second and third PSGs via A5 and A6
 - Document logic blocks and truth tables that match the actual schematic
 
 ---
 
 ## 🧠 Control Signal Logic
 
-JonZON-X uses modern 74HC-series gates to derive control signals for the AY-3-8912. The address decoding is based on:
+JonZON-X uses modern 74HC-series gates to derive control signals for the AY-3-8910. The address decoding is based on:
 
-- **A0–A4**: Select ZON X compatibility.
-- **A0–A3**: Select ZON X-81 compatibility.
+- **A0–A4**: Select the first PSG
+- **A5**: Optional second PSG (replaces A4)
+- **A6**: Optional third PSG (replaces A4)
 - **A7**: Used in BC1 logic
 - **/IOREQ**, **/WR**, **/RD**: Control timing
 
@@ -34,22 +35,24 @@ JonZON-X uses modern 74HC-series gates to derive control signals for the AY-3-89
 | Signal | Logic Expression | Gates Used |
 |--------|------------------|------------|
 | **BDIR** | Derived from /IOREQ and /WR  
-|→ Routed through 74HC02 (inversion) and 74HC11 (3-input AND) || 74HC02, 74HC11 |
+→ Routed through 74HC02 (inversion), 74HC08 (AND), and 74HC11 (3-input AND) | 74HC02, 74HC08, 74HC11 |
 | **BC1** | Derived from /IOREQ, /WR, A2, A7, /RD  
-|→ Routed through 74HC02 and 74HC11 || 74HC02, 74HC11 |
+→ Routed through 74HC02, 74HC08, and 74HC11 | 74HC02, 74HC08, 74HC11 |
 
-There is **no AYSEL signal**—address selection is handled directly via A0–A3/A4.
+There is **no AYSEL signal**—address selection is handled directly via A0–A4 (or A5/A6 for additional PSGs).
 
 ---
 
 ## 📊 Truth Table
 
-| A0–A4 / A0-A3 | A2 | A7 | /IOREQ | /WR | /RD | BDIR | BC1 | Operation         |
-|--------------- |----|----|--------|-----|-----|------|-----|-------------------|
-| PSG 1 selected | 1  | 1  | 0      | 0   | 1   | 1    | 1   | Write to register |
-| PSG 1 selected | 1  | 1  | 0      | 0   | 0   | 1    | 0   | Write to PSG      |
-| PSG 1 selected | 1  | 1  | 0      | 1   | 0   | 0    | 1   | Read from PSG     |
-| Not selected   | —  | —  | —      | —   | —   | 0    | 0   | Inactive          |
+| A0–A4 | A5/A6 | A2 | A7 | /IOREQ | /WR | /RD | BDIR | BC1 | Operation |
+|------|-------|----|----|--------|-----|-----|------|-----|-----------|
+| PSG 1 selected | —     | 1  | 1  | 0      | 0   | 1   | 1    | 1   | Write to register |
+| PSG 1 selected | —     | 1  | 1  | 0      | 0   | 0   | 1    | 0   | Write to PSG |
+| PSG 1 selected | —     | 1  | 1  | 0      | 1   | 0   | 0    | 1   | Read from PSG |
+| PSG 2 selected | A5=1  | 1  | 1  | 0      | —   | —   | —    | —   | Optional second PSG |
+| PSG 3 selected | A6=1  | 1  | 1  | 0      | —   | —   | —    | —   | Optional third PSG |
+| Not selected   | —     | —  | —  | —      | —   | —   | 0    | 0   | Inactive |
 
 ---
 
@@ -57,22 +60,25 @@ There is **no AYSEL signal**—address selection is handled directly via A0–A3
 
 ![AY Control Logic](Images/PSG%20Selection%20Logic.png)
 
-This schematic snippet shows how BDIR and BC1 are generated using 74HC02 and 74HC11 gates. Address selection is handled via A0–A4 for ZON X and A0-A3 for ZON X-81.
+This schematic snippet shows how BDIR and BC1 are generated using 74HC02, 74HC08, and 74HC11 gates. Address selection is handled via A0–A4 (or A5/A6 for additional PSGs).
 
 ---
 
-## 🎚️ DIP Switch for ZON X compatibility
+## 🎚️ DIP Switch Mapping for PSG Selection
 
-JonZON-X supports ZON X mode using a DIP switch. The DIP switch controls the connection of A4 to the expansion bus to select ZON X compatibility.
+JonZON-X supports up to three AY-3-8910 PSGs using configurable address lines via DIP switches. The DIP switches control A4, A5, and A6 to select which PSG is active.
 
-| A4 | Address (Binary) | Address (Decimal) |
-|--- |------------------|-------------------|
-| 0 |`11110000` | 240 |
-| 1 |`11111111` | 255 |
+| PSG   | A4 | A5 | A6 | Address (Binary) | Address (Decimal) |
+|-------|----|----|----|------------------|-------------------|
+| PSG1  | 1  | 0  | 0  | `11111111`       | 255               |
+| PSG2  | 0  | 1  | 0  | `11101111`       | 239               |
+| PSG3  | 0  | 0  | 1  | `11011111`       | 223               |
 
-- **A4** connection to the ZX81 bus is for ZON X compatibility.
-- The bits are part of the PSG register select address and are high (1) for ZON X-81.
-- The DIP switch overrides the default A4 line from the ZX81 and sets it high.
+- **A4, A5, A6** are mutually exclusive: only one should be active at a time.
+- These bits are part of the PSG register select address.
+- DIP switches override the default A4–A6 lines from the ZX81.
+
+This mapping allows users to select which PSG responds to register writes, enabling multi-chip expansion and stereo mixing.
 
 ---
 
@@ -98,26 +104,26 @@ If the initial revision works, future additions may include:
 ### 🧪 Test 1: Test Routine
 
 ```basic
-10 LET A=16514
-20 POKE A,62
-30 POKE A+1,0
-40 POKE A+2,211
-50 POKE A+3,62
-60 POKE A+4,0
-70 POKE A+5,211
-80 POKE A+6,201
-90 POKE 16515,0
-100 POKE 16516,100
-110 RAND USR A
-120 POKE 16515,1
-130 POKE 16516,0
-140 RAND USR A
-150 POKE 16515,7
-160 POKE 16516,254
-170 RAND USR A
-180 POKE 16515,8
-190 POKE 16516,15
-200 RAND USR A
+10 REM ZONTEST1
+20 LET A=16514
+30 POKE A,62
+40 LET A=A+1
+50 POKE A,0
+60 LET A=A+1
+70 POKE A,211
+80 LET A=A+1
+90 POKE A,0
+100 LET A=A+1
+110 POKE A,201
+120 POKE 16515,7
+130 POKE 16516,255
+140 RAND USR 16514
+150 POKE 16515,8
+160 POKE 16516,191
+170 RAND USR 16514
+180 POKE 16515,13
+190 POKE 16516,9
+200 RAND USR 16514
 210 GOTO 210
 ```
 - 🔊 ZONTEST1 – Basic Tone Setup: [zontest1.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest1.p)
@@ -125,90 +131,111 @@ If the initial revision works, future additions may include:
 ### 🧪 Test 2: Envelope & Stereo Test
 
 ```basic
-10 LET A=16514
-20 POKE A,62
-30 POKE A+1,0
-40 POKE A+2,211
-50 POKE A+3,62
-60 POKE A+4,0
-70 POKE A+5,211
-80 POKE A+6,201
-90 POKE 16515,0
-100 POKE 16516,100
-110 RAND USR A
-120 POKE 16515,1
-130 POKE 16516,0
-140 RAND USR A
-150 POKE 16515,7
-160 POKE 16516,254
-170 RAND USR A
-180 POKE 16515,8
-190 POKE 16516,15
-200 RAND USR A
-210 POKE 16515,13
-220 POKE 16516,9
-230 RAND USR A
-240 GOTO 240
+10 REM ZONTEST2
+20 LET A=16514
+30 POKE A,62
+40 LET A=A+1
+50 POKE A,0
+60 LET A=A+1
+70 POKE A,211
+80 LET A=A+1
+90 POKE A,0
+100 LET A=A+1
+110 POKE A,201
+120 POKE 16515,7
+130 POKE 16516,255
+140 RAND USR 16514
+150 POKE 16515,8
+160 POKE 16516,191
+170 RAND USR 16514
+180 POKE 16515,13
+190 POKE 16516,9
+200 RAND USR 16514
+210 LET E=0
+220 POKE 16515,13
+230 POKE 16516,E
+240 RAND USR 16514
+250 LET I=0
+260 LET I=I+1
+270 IF I<1000 THEN GOTO 260
+280 LET E=E+1
+290 IF E<16 THEN GOTO 220
+300 GOTO 210
 ```
 - 🎛️ ZONTEST2 – Envelope & Stereo: [zontest2.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest2.p)
 
 ### 🧪 Test 3: Envelope Period Sweep
 
 ```basic
-10 LET A=16514
-20 POKE A,62
-30 POKE A+1,0
-40 POKE A+2,211
-50 POKE A+3,62
-60 POKE A+4,0
-70 POKE A+5,211
-80 POKE A+6,201
-90 POKE 16515,0
-100 POKE 16516,100
-110 RAND USR A
-120 POKE 16515,1
-130 POKE 16516,0
-140 RAND USR A
-150 POKE 16515,7
-160 POKE 16516,254
-170 RAND USR A
-180 POKE 16515,8
-190 POKE 16516,15
-200 RAND USR A
-210 POKE 16515,13
-220 POKE 16516,9
-230 RAND USR A
-240 POKE 16515,11
-250 POKE 16516,0
-260 RAND USR A
-270 POKE 16515,12
-280 POKE 16516,0
-290 RAND USR A
-300 GOTO 300
+10 REM ZONTEST3
+20 LET A=16514
+30 POKE A,62
+40 LET A=A+1
+50 POKE A,0
+60 LET A=A+1
+70 POKE A,211
+80 LET A=A+1
+90 POKE A,0
+100 LET A=A+1
+110 POKE A,201
+120 POKE 16515,7
+130 POKE 16516,255
+140 RAND USR 16514
+150 POKE 16515,8
+160 POKE 16516,191
+170 RAND USR 16514
+180 POKE 16515,13
+190 POKE 16516,9
+200 RAND USR 16514
+210 LET P=0
+220 POKE 16515,11
+230 POKE 16516,P
+240 RAND USR 16514
+250 POKE 16515,12
+260 POKE 16516,0
+270 RAND USR 16514
+280 LET I=0
+290 LET I=I+1
+300 IF I<1000 THEN GOTO 290
+310 LET P=P+16
+320 IF P<256 THEN GOTO 220
+330 GOTO 210
 ```
 - 📈 ZONTEST3 – Envelope Sweep: [zontest3.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest3.p)
 
 ### 🧪 Test 4: DIP-Selectable PSG Verification
 
 ```basic
-10 LET A=16514
-20 POKE A,62
-30 POKE A+1,0
-40 POKE A+2,211
-50 POKE A+3,62
-60 POKE A+4,0
-70 POKE A+5,211
-80 POKE A+6,201
-90 POKE 16515,8
-100 POKE 16516,255
-110 RAND USR A
+10 REM ZONTEST4
+20 LET A=16514
+30 POKE A,62
+40 LET A=A+1
+50 POKE A,0
+60 LET A=A+1
+70 POKE A,211
+80 LET A=A+1
+90 POKE A,0
+100 LET A=A+1
+110 POKE A,201
 120 POKE 16515,8
-130 POKE 16516,239
-140 RAND USR A
-150 POKE 16515,8
-160 POKE 16516,223
-170 RAND USR A
-180 GOTO 180
+130 POKE 16516,255
+140 RAND USR 16514
+150 LET I=0
+160 LET I=I+1
+170 IF I<500 THEN GOTO 160
+180 POKE 16515,8
+190 POKE 16516,239
+200 RAND USR 16514
+210 LET I=0
+220 LET I=I+1
+230 IF I<500 THEN GOTO 220
+240 POKE 16515,8
+250 POKE 16516,223
+260 RAND USR 16514
+270 LET I=0
+280 LET I=I+1
+290 IF I<500 THEN GOTO 280
+300 GOTO 120
 ```
 - 🎚️ ZONTEST4 – DIP-Selectable PSGs: [zontest4.p](https://github.com/jgratton72/JonZON-X/blob/master/Tests/zontest4.p)
 
@@ -247,19 +274,6 @@ If the initial revision works, future additions may include:
   - Updated KiCad symbols and PCB layout to reflect accurate DIP sizing.
 - **Impact**: Improves build reliability and simplifies future revisions.
 
-### 🔄 Rev 2.0 – Going back to my roots
-- **Issue**: Rev 1.x has some major timing and stability issues, so the project was Archived and a fresh start on v2.0
-- **Fix**: Going back to the simple ways:
-  - Changed decoding logic back to origional ZON X and ZON X-81.
-  - Reverting back to AY-3-8912 as in the origional.
-  - Created new KiCad Schematic and PCB for v2.0 to test out origional logic and miss out the optional A5 and A6.
-  - Make the PCB simple with no flooded ground plains to see if that was making noise and reflections.
-  - Keep cleen short traces with weights set for the appropriate Nets.
-  - Update truth tables to remove A5 and A6.
-  - Remove DIP Switch settings and replace with a single switch for ZON X and ZON X-81 compatibility.
-  - Add solder in edge connector for easier assembly.
-  - Add test header points for discrete debugging without compromising trace lengths.
-- **Impact**: Rev 1.x does not work.
 ---
 
 ## 📝 Notes
