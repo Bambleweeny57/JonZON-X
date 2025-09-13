@@ -274,6 +274,17 @@ If the initial revision works, future additions may include:
   - Updated KiCad symbols and PCB layout to reflect accurate DIP sizing.
 - **Impact**: Improves build reliability and simplifies future revisions.
 
+### 🔄 Rev 1.4 – Dual PSG Support & Expansion-Ready Logic
+
+- 🧩 **Added AY-3-8912 schematic symbol** to Rev 1.3 base, enabling direct support for legacy demos and stereo output
+- 🧠 **Dual PSG compatibility**: Supports both AY-3-8910 and AY-3-8912 via shared footprint and modular decoding logic
+- 🧰 **Decoding logic updated** to include `/RD` line—reserved for future expansion (e.g. SD card interfacing via Port A)
+- 🛠️ **Maintains Rev 1.3 write logic** for AY-3-8910 while enabling seamless upgrade path to AY-3-8912
+- 🎶 **Verified compatibility** with original ULA and both HCT and F-series logic—multi scroll and Viaduct demos pass cleanly with AY-3-8912
+- ⚠️ **VLA81 compatibility issues noted**: Viaduct demo fails to run reliably due to timing sensitivity and address decoding quirks. Detaching A15 improves behavior in some cases but does not fully resolve playback issues. Original ULA remains the recommended option for stable demo performance.
+- 📘 **README and onboarding overlays updated** to reflect dual-chip support and future expansion notes
+
+> Rev 1.4 preserves the modular ethos of JonZON-X while enabling legacy fidelity and future-proofed decoding. Component back-mounting and through-hole edge connector support are planned for a future revision.
 ---
 
 ## 📝 Notes
