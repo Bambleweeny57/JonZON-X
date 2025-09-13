@@ -284,7 +284,10 @@ If the initial revision works, future additions may include:
 - ⚠️ **VLA81 compatibility issues noted**: Viaduct demo fails to run reliably due to timing sensitivity and address decoding quirks. Detaching A15 improves behavior in some cases but does not fully resolve playback issues. Original ULA remains the recommended option for stable demo performance.
 - 📘 **README and onboarding overlays updated** to reflect dual-chip support and future expansion notes
 
+[![Dual PSG Certified™](https://img.shields.io/badge/Dual%20PSG-Certified-blue)]()
+
 > Rev 1.4 preserves the modular ethos of JonZON-X while enabling legacy fidelity and future-proofed decoding. Component back-mounting and through-hole edge connector support are planned for a future revision.
+
 ---
 
 ## 📝 Notes
