@@ -60,11 +60,27 @@
       ],
       "drc_exclusions": [
         [
+          "courtyards_overlap|101855000|74745000|32424b1e-9e51-4337-8268-0613830edcc3|49f11335-ce49-4124-9afd-e21a143b4a84",
+          "This is by design to add optional AY-3-8912"
+        ],
+        [
           "silk_edge_clearance|100718102|48260000|fe79e3a1-2cb4-40ef-9fef-bf000919eb12|dabd0b95-88d2-4648-a5da-59624175ae34",
           ""
         ],
         [
           "silk_edge_clearance|112972098|48260000|fe79e3a1-2cb4-40ef-9fef-bf000919eb12|ed075dd9-00f9-4f80-8650-d81f08f1d99a",
+          ""
+        ],
+        [
+          "silk_overlap|101461002|77759999|59c0982f-fdf2-44cc-afb9-c72490e82911|74e382a4-2c5f-4e27-88ec-86dd0d211b28",
+          ""
+        ],
+        [
+          "silk_overlap|101660000|77760000|74e382a4-2c5f-4e27-88ec-86dd0d211b28|8e03913a-fd02-4e4d-a055-c85b18b474f1",
+          ""
+        ],
+        [
+          "silk_overlap|65980000|77760000|0f4174f1-a738-4f07-be1f-6d0de4b3e669|74e382a4-2c5f-4e27-88ec-86dd0d211b28",
           ""
         ]
       ],
