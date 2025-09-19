@@ -290,6 +290,24 @@ If the initial revision works, future additions may include:
 
 ---
 
+## 🧩 Rev1.x Closure Summary
+
+The Rev1.x series of JONZON-X-81 boards concludes with **Rev1.4**, marking the final iteration of this foundational phase. Throughout development, multiple configurations were explored to optimize PSG register selection and compatibility:
+
+- **AY-3-8910** with grounded Port B showed partial success in register selection, but inconsistencies remained—especially when paired with **74F logic**.
+- Transitioning to **AY-3-8912** and **74HCT logic** yielded flawless register selection across demo routines, confirming a stable configuration.
+
+Based on these findings, Rev1.4 is the final release in the Rev1.x lineage. All future development will pivot to **Rev2.0**, which will:
+
+- Standardize on the **AY-3-8912** sound chip.
+- Feature **back-mounted components** for cleaner top-side access.
+- Introduce a **through-hole edge connector** to support future expansions.
+- Include a **development header** exposing A0–A7, 5V, and GND—enabling both sound card interfacing and SD card experimentation via Port A.
+
+Documentation for Rev1.x will remain available for reference and legacy compatibility. Contributors are encouraged to migrate to the Rev2.0 repo for ongoing development and community collaboration.
+
+---
+
 ## 📝 Notes
 
 This is my first KiCad project and GitHub repo. While I’ve used other EDA tools and GitHub before, this is a learning curve and a preservation effort.
